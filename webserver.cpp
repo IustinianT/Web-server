@@ -1,8 +1,19 @@
 #define _WINSOCK_DEPRECATED_NO_WARNINGS 
 #pragma comment(lib, "ws2_32.lib")
-#include <iostream>
+
 #include <WinSock2.h>
+
+#include <iostream>
 #include <string>
+#include <fstream>
+#include <sstream>
+
+std::string loadHTML(const std::string& path) {
+    std::ifstream f(path);
+    std::ostringstream ss;
+    ss << f.rdbuf();
+    return ss.str();
+}
 
 int main()
 {
@@ -58,8 +69,9 @@ int main()
             std::cout << "Could not read client request" << WSAGetLastError() << std::endl;
         }
 
+        // generate server message
         std::string serverMessage = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: ";
-        std::string response = "<html><h1>Hello World!<\h1><a href='https://www.google.com'>Google link<\html>";
+        std::string response = loadHTML("index.html");
         serverMessage.append(std::to_string(response.size()));
         serverMessage.append("\n\n");
         serverMessage.append(response);
