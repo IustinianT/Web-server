@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Web server (tutorial).cpp">
+    <ClCompile Include="webserver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
