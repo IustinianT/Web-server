@@ -71,7 +71,24 @@ int main()
 
         // generate server message
         std::string serverMessage = "HTTP/1.1 200 OK\nContent-Type: text/html\nContent-Length: ";
-        std::string response = loadHTML("index.html");
+        /*std::string response = loadHTML("index.html");*/
+        std::istringstream reqStream(buff);
+        std::string method, path, version;
+        reqStream >> method >> path >> version;
+
+        // Remove leading '/'
+        if (path == "/") path = "index.html";
+        else path = path.substr(1); // "testpage.html"
+
+        std::string response;
+        try {
+            response = loadHTML(path);
+        }
+        catch (...) {
+            // Return 404 if file not found
+            response = "<html><body><h1>404 Not Found</h1></body></html>";
+        }
+
         serverMessage.append(std::to_string(response.size()));
         serverMessage.append("\n\n");
         serverMessage.append(response);

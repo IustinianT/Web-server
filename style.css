@@ -1,0 +1,26 @@
+* {
+    text-align:center;
+    min-height:fit-content;
+}
+
+body {
+    justify-content:center;
+    width:100vw;
+/*    height:100vh;*/
+
+    background-color:aquamarine;
+}
+
+iframe {
+    width:95vw;
+    height:50vh;
+
+    justify-content:center;
+}
+
+.template {
+    width:95vw;
+    padding:2%;
+
+    font-size:medium;
+}

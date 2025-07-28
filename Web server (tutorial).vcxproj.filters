@@ -16,6 +16,12 @@
     <Filter Include="Resource Files\templates">
       <UniqueIdentifier>{619d9b9d-3695-40ca-a22f-c3f604c4eb74}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\js">
+      <UniqueIdentifier>{79860956-99cd-46f1-a2a4-d25b4edd3106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\css">
+      <UniqueIdentifier>{9c172797-aa04-4aa8-8e2c-cab64839cd49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="webserver.cpp">
@@ -25,6 +31,18 @@
   <ItemGroup>
     <None Include="index.html">
       <Filter>Resource Files\templates</Filter>
+    </None>
+    <None Include="testpage.html">
+      <Filter>Resource Files\templates</Filter>
+    </None>
+    <None Include="test.js">
+      <Filter>Resource Files\js</Filter>
+    </None>
+    <None Include="extra.html">
+      <Filter>Resource Files\templates</Filter>
+    </None>
+    <None Include="style.css">
+      <Filter>Resource Files\css</Filter>
     </None>
   </ItemGroup>
 </Project>
