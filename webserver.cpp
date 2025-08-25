@@ -12,7 +12,27 @@ std::string loadHTML(const std::string& path) {
     std::ifstream f(path);
     std::ostringstream ss;
     ss << f.rdbuf();
-    return ss.str();
+	std::string content = ss.str();
+    
+	// implement server side includes; <!--#include "dashboard.html"-->
+	const std::string includeTag = "<!--#include";
+    const std::string endTag = "-->";
+	size_t pos = content.find(includeTag);
+    if (pos != std::string::npos) {
+		std::cout << "Processing server-side include in " << path << std::endl;
+        size_t start = pos + 14; // length of <!--#include "
+        size_t end = content.find(endTag);
+        if (end != std::string::npos) {
+			// std::cout << "Found end tag at position: " << end << std::endl;
+            std::string includeFile = content.substr(start, end - start - 1);
+            // std::cout << "file to be included: " << includeFile << std::endl;
+            std::string includeContent = loadHTML(includeFile); // recursive call
+            content.replace(pos, end + 3, includeContent); // replace entire tag with content
+            // std::cout << "new content: " + content << std::endl;
+        }
+	}
+    
+    return content;
 }
 
 int main()
@@ -77,8 +97,11 @@ int main()
         reqStream >> method >> path >> version;
 
         // Remove leading '/'
-        if (path == "/") path = "index.html";
-        else path = path.substr(1); // "testpage.html"
+		if (path == "/") path = "main.html";
+        else if (path == "/home") path = "index.html";
+        else if (path == "/testpage") path = "testpage.html";
+        else if (path == "/extra") path = "extra.html";
+        else path = path.substr(1);
 
         std::string response;
         try {

@@ -128,6 +128,7 @@
   <ItemGroup>
     <None Include="extra.html" />
     <None Include="index.html" />
+    <None Include="main.html" />
     <None Include="style.css" />
     <None Include="test.js" />
     <None Include="testpage.html" />

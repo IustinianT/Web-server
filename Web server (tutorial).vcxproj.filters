@@ -44,5 +44,8 @@
     <None Include="style.css">
       <Filter>Resource Files\css</Filter>
     </None>
+    <None Include="main.html">
+      <Filter>Resource Files\templates</Filter>
+    </None>
   </ItemGroup>
 </Project>
