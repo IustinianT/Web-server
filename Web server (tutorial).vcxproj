@@ -128,8 +128,10 @@
   <ItemGroup>
     <None Include="extra.html" />
     <None Include="index.html" />
+    <None Include="input.css" />
     <None Include="main.html" />
-    <None Include="style.css" />
+    <None Include="package.json" />
+    <None Include="tailwind.config.js" />
     <None Include="test.js" />
     <None Include="testpage.html" />
   </ItemGroup>

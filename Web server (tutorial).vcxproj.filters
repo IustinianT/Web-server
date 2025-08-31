@@ -41,11 +41,11 @@
     <None Include="extra.html">
       <Filter>Resource Files\templates</Filter>
     </None>
-    <None Include="style.css">
-      <Filter>Resource Files\css</Filter>
-    </None>
     <None Include="main.html">
       <Filter>Resource Files\templates</Filter>
     </None>
+    <None Include="tailwind.config.js" />
+    <None Include="package.json" />
+    <None Include="input.css" />
   </ItemGroup>
 </Project>

@@ -85,7 +85,7 @@ int main()
         // read request
         char buff[30720] = { 0 };
         bytes = recv(new_wsocket, buff, BUFFER_SIZE, 0);
-        if (bytes < 0) {
+        if (bytes <= 0) {
             std::cout << "Could not read client request" << WSAGetLastError() << std::endl;
         }
 
@@ -97,7 +97,7 @@ int main()
         reqStream >> method >> path >> version;
 
         // Remove leading '/'
-		if (path == "/") path = "main.html";
+		if (path == "/") path = "index.html";
         else if (path == "/home") path = "index.html";
         else if (path == "/testpage") path = "testpage.html";
         else if (path == "/extra") path = "extra.html";
