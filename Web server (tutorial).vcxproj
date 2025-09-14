@@ -102,6 +102,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>libs</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,17 +124,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="webserver.cpp" />
+    <ClCompile Include="model\user.cpp" />
+    <ClCompile Include="libs\sqlite3.c" />
+    <ClCompile Include="src\webserver.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="extra.html" />
-    <None Include="index.html" />
-    <None Include="input.css" />
-    <None Include="main.html" />
-    <None Include="package.json" />
-    <None Include="tailwind.config.js" />
-    <None Include="test.js" />
-    <None Include="testpage.html" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="styles\input.output.css" />
+    <None Include="view\extra.html" />
+    <None Include="view\home.html" />
+    <None Include="frontend\src\input.css" />
+    <None Include="view\main.html" />
+    <None Include="frontend\package.json" />
+    <None Include="frontend\tailwind.config.js" />
+    <None Include="view\testpage.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes\webserver.h" />
+    <ClInclude Include="model\user.h" />
+    <ClInclude Include="libs\sqlite3.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

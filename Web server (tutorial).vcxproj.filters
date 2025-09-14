@@ -24,28 +24,45 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="webserver.cpp">
+    <ClCompile Include="src\webserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="model\user.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\sqlite3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="index.html">
+    <None Include="view\home.html">
       <Filter>Resource Files\templates</Filter>
     </None>
-    <None Include="testpage.html">
+    <None Include="view\testpage.html">
       <Filter>Resource Files\templates</Filter>
     </None>
-    <None Include="test.js">
-      <Filter>Resource Files\js</Filter>
-    </None>
-    <None Include="extra.html">
+    <None Include="view\extra.html">
       <Filter>Resource Files\templates</Filter>
     </None>
-    <None Include="main.html">
+    <None Include="view\main.html">
       <Filter>Resource Files\templates</Filter>
     </None>
-    <None Include="tailwind.config.js" />
-    <None Include="package.json" />
-    <None Include="input.css" />
+    <None Include="frontend\tailwind.config.js" />
+    <None Include="frontend\package.json" />
+    <None Include="frontend\src\input.css" />
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="styles\input.output.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="includes\webserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="model\user.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\sqlite3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
